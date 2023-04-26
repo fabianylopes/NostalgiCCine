@@ -1,3 +1,11 @@
+import Movies from "./Movies";
+import Register from "./Register";
+
 export default function Home() {
-  return <h1>Locadora de Clássicos</h1>;
+  return (
+    <>
+      <Register />
+      <Movies />;
+    </>
+  );
 }
