@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Register registered={registered} setRegistered={setRegistered} />
-      <Movies registered={registered} />;
+      <Movies registered={registered} />
     </>
   );
 }

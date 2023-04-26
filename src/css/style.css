@@ -1,11 +1,12 @@
 body {
   width: 100vw;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Genos', sans-serif;
   padding-top: 68px;
   background-color: #e2dcca;
 }
 
 .root {
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +14,6 @@ body {
 
 .register-box {
   width: 400px;
-  padding: 22px;
 
   display: flex;
   flex-direction: column;
@@ -82,10 +82,13 @@ input::placeholder {
 
 h2{
   color: #fff;
+  font-size: 20px;
 }
 
 h3 {
   color: #8c0c20;
+  font-size: 24px;
+  font-weight: 400;
 }
 
 .header {
@@ -108,8 +111,13 @@ h3 {
 .title {
   color: #8c0c20;
   font-weight: 400;
-  font-size: 34px;
+  font-size: 44px;
   line-height: 40px;
+}
+
+p{
+  color: #8c0c20;
+  font-size: 20px;
 }
 
 .title-box{
@@ -145,7 +153,9 @@ button {
   height: 24px;
   background-color: #ffc72c;
   color: #8c0c20;
+  font-family: 'Genos', sans-serif;
   font-weight: 700;
+  font-size: 14px;
   border-radius: 3px;
   border: 1px solid #8c0c20;
   cursor: pointer;

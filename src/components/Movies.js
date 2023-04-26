@@ -21,8 +21,6 @@ export default function Movies({ registered }) {
     promise.catch((err) => console.log(err));
   }
 
-  console.log(movies);
-
   return (
     <div className="movies-container">
       {movies &&
@@ -32,7 +30,7 @@ export default function Movies({ registered }) {
               <img key={f.id} src={f.poster} alt="" />
             </div>
             <div className="info-movies">
-              <p>{f.title}</p>
+              <p className="movie-title">{f.title}</p>
               <p>Ano: {f.releaseYear}</p>
               <p>R$ {f.rentalPrice.toFixed(2)}</p>
               {rented ? (

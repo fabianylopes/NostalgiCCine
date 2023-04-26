@@ -19,7 +19,7 @@ const films = [
     poster:
       "https://www.themoviedb.org/t/p/w1280/8j5igb0iuV9TYudw9SuMV5GT9K9.jpg",
     releaseYear: 1982,
-    rentalPrice: 9.9,
+    rentalPrice: 16.9,
   },
   {
     id: 2,
