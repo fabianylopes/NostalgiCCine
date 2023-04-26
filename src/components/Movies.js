@@ -2,14 +2,18 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Movies({ registered }) {
-  const [rented, setRented] = useState(false);
   const [movies, setMovies] = useState(null);
+  const [rented, setRented] = useState([]);
 
-  function rent() {
+  function rent(id) {
     if (!registered) {
       alert("Você precisa se cadastrar para alugar um filme!");
     } else {
-      setRented(true);
+      if (rented.includes(id)) {
+        setRented(rented.filter((f) => (f === id ? false : true)));
+      } else {
+        setRented([...rented, id]);
+      }
     }
   }
 
@@ -24,19 +28,19 @@ export default function Movies({ registered }) {
   return (
     <div className="movies-container">
       {movies &&
-        movies.map((f) => (
-          <div className="movie">
+        movies.map((m) => (
+          <div key={m.id} className="movie">
             <div className="container">
-              <img key={f.id} src={f.poster} alt="" />
+              <img src={m.poster} alt="" />
             </div>
             <div className="info-movies">
-              <p className="movie-title">{f.title}</p>
-              <p>Ano: {f.releaseYear}</p>
-              <p>R$ {f.rentalPrice.toFixed(2)}</p>
-              {rented ? (
-                <h3>Alugado com Sucesso</h3>
+              <p className="movie-title">{m.title}</p>
+              <p>Ano: {m.releaseYear}</p>
+              <p>R$ {m.rentalPrice.toFixed(2)}</p>
+              {rented.includes(m.id) ? (
+                <h4>Alugado com Sucesso</h4>
               ) : (
-                <button onClick={rent}>Alugar</button>
+                <button onClick={() => rent(m.id)}>Alugar</button>
               )}
             </div>
           </div>

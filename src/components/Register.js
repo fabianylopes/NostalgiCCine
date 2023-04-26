@@ -11,7 +11,7 @@ export default function Register({ registered, setRegistered }) {
   if (registered) {
     return (
       <>
-        <h3>Olá, {userInfo.name}</h3>
+        <h3>Olá, {userInfo.name}!</h3>
         <div className="title-box">
           <h3>Escolha o filme que deseja alugar</h3>
         </div>
