@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function Movies() {
+export default function Movies({ registered }) {
   const [rented, setRented] = useState(false);
-
-  function rent() {
-    setRented(true);
-  }
-
   const [movies, setMovies] = useState(null);
 
-  useEffect(() => getFilms(), []); // eslint-disable-line react-hooks/exhaustive-deps
+  function rent() {
+    if (!registered) {
+      alert("Você precisa se cadastrar para alugar um filme!");
+    } else {
+      setRented(true);
+    }
+  }
+
+  useEffect(() => getFilms(), []);
 
   function getFilms() {
     const promise = axios.get("http://localhost:4000/films/");
@@ -21,19 +24,16 @@ export default function Movies() {
   console.log(movies);
 
   return (
-    <>
-      <div className="title-box">
-        <h3>Escolha o filme que deseja alugar</h3>
-      </div>
+    <div className="movies-container">
       {movies &&
         movies.map((f) => (
-          <>
+          <div className="movie">
             <div className="container">
               <img key={f.id} src={f.poster} alt="" />
             </div>
-            <div>
+            <div className="info-movies">
               <p>{f.title}</p>
-              <p>{f.releaseYear}</p>
+              <p>Ano: {f.releaseYear}</p>
               <p>R$ {f.rentalPrice.toFixed(2)}</p>
               {rented ? (
                 <h3>Alugado com Sucesso</h3>
@@ -41,8 +41,8 @@ export default function Movies() {
                 <button onClick={rent}>Alugar</button>
               )}
             </div>
-          </>
+          </div>
         ))}
-    </>
+    </div>
   );
 }

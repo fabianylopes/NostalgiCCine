@@ -1,13 +1,62 @@
 body {
-  width: 375px;
+  width: 100vw;
   font-family: 'Roboto', sans-serif;
-  padding-top: 67px;
+  padding-top: 68px;
+  background-color: #e2dcca;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-box {
+  width: 400px;
+  padding: 22px;
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movies-container {
+  width: 100vw;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie {
+  width: 350px;
+  border: 1px solid #8c0c20;
+  padding: 10px;
+  display: flex;
+}
+
+.info-movies {
+  width: 200px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
 }
 
 form {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.form-box {
+  padding-top: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,8 +73,19 @@ input {
   background-color: #FFFFFF;
 }
 
+input::placeholder {
+    font-size: 14px;
+    line-height: 40px;
+    color: #8c0c20;
+}
+
+
 h2{
   color: #fff;
+}
+
+h3 {
+  color: #8c0c20;
 }
 
 .header {
@@ -65,7 +125,6 @@ h2{
 .container {
   padding-left: 24px;
   padding-right: 24px;
-  background-color: aqua;
 
   display: flex;
   justify-content: center;
@@ -88,6 +147,6 @@ button {
   color: #8c0c20;
   font-weight: 700;
   border-radius: 3px;
-  border: none;
+  border: 1px solid #8c0c20;
   cursor: pointer;
 }
